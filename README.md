@@ -9,7 +9,7 @@ which allows users to perform the training on a single GPU.
 
 The fine-tuning results have been submitted as a PEFT adapter and can be accessed here:
 
-- [FlowerTune-Bio-Medical-Llama-3-8B-Instruct-Medical-PEFT](https://huggingface.co/mrs83/FlowerTune-Qwen2.5-7B-Instruct-Medical-PEFT)
+- [FlowerTune-Bio-Medical-Llama-3-8B-Instruct-Medical-PEFT](https://github.com/mHealthUnimelb/fedllm-medical-biomedllama/tree/main/flowertune-eval-medical/peft_10)
 
 ## Methodology
 
@@ -49,7 +49,7 @@ When bf16 and tf32 are enabled, model weights are stored in bf16 format, while g
 
 ### Communication Budget
 
-46228 Megabytes
+3000.96 Megabytes
 
 ## Environments setup
 
@@ -77,17 +77,6 @@ The configs are defined in `[tool.flwr.app.config]` entry of `pyproject.toml`, a
 ```bash
 flwr run
 ```
-
-## VRAM consumption
-
-We use Mistral-7B model with 4-bit quantization as default. The estimated VRAM consumption per client for each challenge is shown below:
-
-| Challenges | GeneralNLP |   Finance  |   Medical  |    Code    |
-| :--------: | :--------: | :--------: | :--------: | :--------: |
-|    VRAM    | ~25.50 GB  | ~17.30 GB  | ~22.80 GB  | ~17.40 GB  |
-
-You can adjust the CPU/GPU resources you assign to each of the clients based on your device, which are specified with `options.backend.client-resources.num-cpus` and `options.backend.client-resources.num-gpus` under `[tool.flwr.federations.local-simulation]` entry in `pyproject.toml`.
-
 
 ## Model saving
 
