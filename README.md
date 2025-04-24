@@ -32,7 +32,7 @@ For the **Bio-Medical-Llama-3-8B Instruct** model, we adopted the following fine
   - Batch size: 16
   - Maximum number of steps: 6
   - Warmup steps: 2
-  - Total number of rounds: 20
+  - Total number of rounds: 10
   - Fraction fit per round: 0.15
 - **Learning Rate Scheduler**: Constant learning rate scheduler with warmup steps, where:
   - Maximum LR: 5e-5
