@@ -41,6 +41,8 @@ For the **Bio-Medical-Llama-3-8B Instruct** model, we adopted the following fine
 
 When bf16 and tf32 are enabled, model weights are stored in bf16 format, while gradients are computed in half-precision and converted to full 32-bit precision for updates.
 
+Hardware: NVIDIA A100 (1x GPU)
+
 - **pubmedqa**: 0.6960
 - **medmcqa**: 0.5912
 - **medqa**: 0.6394
@@ -62,7 +64,7 @@ pip install -e .
 ## Experimental setup
 
 The dataset is divided into 20 partitions in an IID fashion, a partition is assigned to each ClientApp.
-We randomly sample a fraction (0.15) of the total nodes to participate in each round, for a total of `100` rounds.
+We randomly sample a fraction (0.15) of the total nodes to participate in each round, for a total of `10` rounds.
 All settings are defined in `pyproject.toml`.
 
 > [!IMPORTANT]
